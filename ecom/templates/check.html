@@ -1,0 +1,74 @@
+{% extends 'menu.html' %}
+{% block content %}
+{% load static %}
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<div class="container mt-5">
+<div class="row">
+
+<!-- Billing Form -->
+<div class="col-md-7">
+    <h3>Billing Details</h3>
+
+    <form>
+        <input type="text" class="form-control mb-3" placeholder="Full Name">
+        <input type="email" class="form-control mb-3" placeholder="Email">
+        <input type="text" class="form-control mb-3" placeholder="Phone">
+        <input type="text" class="form-control mb-3" placeholder="Address">
+        <button class="btn btn-success w-100">Place Order</button>
+    </form>
+</div>
+
+<!-- Cart Summary -->
+<div class="col-md-5">
+    <h3>Your Cart</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody id="checkoutcart"></tbody>
+    </table>
+
+    <h4 id="grandtotal"></h4>
+</div>
+
+</div>
+</div>
+
+<script>
+
+    function checkout(){
+        var cart = JSON.parse(localStorage.getItem("cart")) ||[];
+        var html="";
+        var total=0;
+
+        cart.forEach(function(item){
+            var itemtotal=item.price* item.quantity;
+            total+=itemtotal;
+
+            html += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.quantity}</td>  
+                <td>${itemtotal}</td>
+            </tr>
+            `;     
+        });
+
+        document.getElementById("checkoutcart").innerHTML=html;
+        document.getElementById("grandtotal").innerHTML = "Total: ₹" + total;
+    }
+
+    checkout()
+
+    window.onload=checkout;
+
+</script>
+{% endblock %}
