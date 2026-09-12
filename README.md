@@ -6,15 +6,7 @@ The platform allows customers to browse products, search and filter items, manag
 
 This project is designed as a reusable foundation for building a scalable online marketplace.
 
-🌐 Live Demo
-
-🔗 Live Website: https://your-ecommerce-url.com
-
-🔗 Seller Dashboard: https://your-seller-dashboard-url.com
-
-🔗 GitHub Repository: https://github.com/your-username/ecommerce-website
-
-✨ Features
+## ✨ Features
 👤 Customer Features
 
 🔐 Authentication
@@ -23,6 +15,7 @@ This project is designed as a reusable foundation for building a scalable online
 - Secure authentication
 - Password management
 - Profile management
+  
 🛍️ Product Browsing
 - Browse products
 - Product categories
@@ -31,8 +24,10 @@ This project is designed as a reusable foundation for building a scalable online
 - Product variants
 - Product ratings and reviews
 - Related products
+
 🔎 Search & Filtering
 - Search products
+
 🛒 Shopping Cart
 - Add products to cart
 - Remove products
@@ -40,6 +35,7 @@ This project is designed as a reusable foundation for building a scalable online
 - View cart total
 - Automatic price calculation
 - Cart persistence
+
 💳 Checkout
 - Shipping address
 - Billing information
